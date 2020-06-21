@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapsActivity">
+
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="normal"
+        android:scaleType="fitCenter"
+        android:id="@+id/current_location"
+
+        android:backgroundTint="@color/colorGreen"
+        app:rippleColor="@color/colorDarkgreen"
+        app:borderWidth="0dp"
+        app:elevation="5dp"
+        app:pressedTranslationZ="5dp"
+
+        app:layout_anchor="@id/constrain"
+        app:layout_anchorGravity="center|top"
+        android:layout_marginBottom="50dp"
+        app:layout_dodgeInsetEdges="bottom"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/current_location"
+        app:layout_anchorGravity="center"
+        android:text="定位"
+        android:textSize="30dp"
+        android:elevation="10dp"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="mini"
+        android:scaleType="fitCenter"
+        android:id="@+id/zoomout"
+
+        android:backgroundTint="@color/colorGreen"
+        app:rippleColor="@color/colorDarkgreen"
+        app:borderWidth="0dp"
+        app:elevation="5dp"
+        app:pressedTranslationZ="5dp"
+
+        app:layout_anchor="@id/constrain"
+        app:layout_anchorGravity="end|top"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="10dp"
+        app:layout_dodgeInsetEdges="bottom"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/zoomout"
+        app:layout_anchorGravity="center"
+        android:text="-"
+        android:textSize="30dp"
+        android:elevation="10dp"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="mini"
+        android:scaleType="fitCenter"
+        android:id="@+id/zoomin"
+
+        android:backgroundTint="@color/colorGreen"
+        app:rippleColor="@color/colorDarkgreen"
+        app:borderWidth="0dp"
+        app:elevation="5dp"
+        app:pressedTranslationZ="5dp"
+
+        app:layout_anchor="@id/constrain"
+        app:layout_anchorGravity="end|top"
+        android:layout_marginBottom="100dp"
+        android:layout_marginRight="10dp"
+        app:layout_dodgeInsetEdges="bottom"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/zoomin"
+        app:layout_anchorGravity="center"
+        android:text="+"
+        android:textSize="30dp"
+        android:elevation="10dp"
+        />
+    <include layout="@layout/content_main"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
