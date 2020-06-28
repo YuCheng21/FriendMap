@@ -63,6 +63,8 @@ import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 public class MapsActivity extends FragmentActivity implements
@@ -942,11 +944,15 @@ public class MapsActivity extends FragmentActivity implements
                 if (lastLatLng != null){
                     PolylineOptions polylineOptions = new PolylineOptions()
                             .add(lastLatLng,currentLatLng)
-                            .width(5)
+                            .width(10)
                             .jointType(JointType.ROUND)
                             .startCap(new RoundCap())
                             .endCap(new RoundCap())
                             .color(getResources().getColor(R.color.colorRoad));
+                    if (polylines.size() >= 300){
+                        polylines.get(0).remove();
+                        polylines.remove(0);
+                    }
                     polylines.add(mMap.addPolyline(polylineOptions));
 
                 }
@@ -973,7 +979,7 @@ public class MapsActivity extends FragmentActivity implements
                     if ( currentLatLng != null){
                         runOnUiThread(uiRunnable);
                     }
-
+                    Log.d(TAG, "polylines count : " + polylines.size());
                     if(thread.isInterrupted())
                         break;
                     try {
